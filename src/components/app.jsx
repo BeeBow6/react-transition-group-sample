@@ -14,7 +14,7 @@ const ROUTES = [
 const App = () => {
   return (
     <div className="page">
-      <BrowserRouter>
+      <BrowserRouter basename="/react-transition-group-sample/dist">
         <ul className="menu">
           {ROUTES.map(({ name, path }) => (
             <li key={path}>
