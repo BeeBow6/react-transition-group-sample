@@ -1,0 +1,94 @@
+.pop {
+  @mixin transition {
+    transition: all .2s linear;
+  }
+  padding-top: 1rem;
+
+  &__frame{
+    width: 20rem;
+    height: 20rem;
+    box-sizing: border-box;
+    margin: 1rem auto;
+    border: 5px solid #1383b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--enter {
+      border-width: 20px;
+      opacity: 0;
+
+      &-active {
+        transition: all .2s ease-in-out;
+        opacity: 1;
+        border-width: 5px;
+      }
+    }
+    &--exit {
+      opacity: 1;
+      border-width: 5px;
+  
+      &-active {
+        transition: all .2s ease-in-out;
+        opacity: 0;
+        border-width: 20px;
+      }
+    }
+  }
+  
+  &__rotate {
+    width: 80%;
+    height: 80%;
+    background-color: #f3b7b7;
+    overflow: hidden;
+
+    &--enter {
+      transform: scale(0) rotate(270deg);
+
+      &-active {
+        transition: all .3s linear;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    &--exit {
+      transform: scale(1) rotate(0deg);
+  
+      &-active {
+        transition: all .3s linear;
+        transform: scale(0) rotate(270deg);
+      }
+    }
+  }
+
+  &__slide {
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    background-color: #fff;
+    margin: 50% auto auto;
+    transform: translate3d(0, -50%, 0);
+
+    &--enter {
+      margin-top: 130%;
+
+      &-active {
+        transition: all .4s ease-out;
+        margin-top: 50%;
+      }
+    }
+    &--exit {
+      margin-top: 50%;
+  
+      &-active {
+        transition: all .4s ease-in;
+        margin-top: 130%;
+      }
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 1rem auto;
+    padding: .2rem 1rem;
+  }
+}

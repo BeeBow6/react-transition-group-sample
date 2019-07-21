@@ -1,0 +1,22 @@
+{
+  "name": "react-transition-group-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.js",
+    "build": "parcel build --no-source-maps src/index.js"
+  },
+  "author": "koedamon",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-transition-group": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.5"
+  }
+}

@@ -1,0 +1,35 @@
+.flip {
+  &-card {
+    margin: 3rem auto;
+    position: relative;
+    transform-style: preserve-3d;
+    width: 15rem;
+    height: 20rem;
+    color: #fff;
+    font-size: 3.5rem;
+
+    %cardInner {
+      position: absolute;
+      top:0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__front {
+      @extend %cardInner;
+      background-color: #82c1c4;
+    }
+    &__back {
+      @extend %cardInner;
+      transform: rotateY(180deg);
+      background-color: #e29599;
+    }
+  }
+}

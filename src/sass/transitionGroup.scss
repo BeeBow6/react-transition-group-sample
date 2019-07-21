@@ -1,0 +1,85 @@
+.fade {
+  $cardHeight: 4rem;
+  @mixin transition {
+    transition: all .2s linear;
+  }
+
+  &-add {
+    width: 25rem;
+    display: flex;
+    margin: 1rem auto;
+
+    &__text {
+      flex:1;
+    }
+  }
+
+  &-card {
+    height: $cardHeight;
+    width: 25rem;
+    margin: 0 auto;
+    padding: .2rem 0;
+    transform-origin: top;
+
+    &--enter {
+      opacity: 0;
+      height: 0;
+
+      &-active {
+        @include transition;
+        opacity: 1;
+        height: $cardHeight;
+      }
+    }
+    &--exit {
+      opacity: 1;
+      height: $cardHeight;
+  
+      &-active {
+        @include transition;
+        opacity: 0;
+        height: 0;
+      }
+    }
+
+    &__body {
+      height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: .5rem 0 .5rem .5rem;
+      border: 1px solid #2c844e;
+      background-color: #e6ece7;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__del {
+      width: 3rem;
+      height: 3rem;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      text-indent: 100%;
+      position: relative;
+      align-self: center;
+
+      &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 2px;
+        background-color: #888;
+      }
+      &::before {
+        transform: translate3d(-50%, 0, 0) rotate(45deg);
+      }
+      &::after {
+        transform: translate3d(-50%, 0, 0) rotate(-45deg);
+      }
+    }
+  }
+}
